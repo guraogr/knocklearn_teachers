@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Text color={'error'}>afewa</Text>
+      <Text color={'caution'}>afewa</Text>
     </div>
   )
 }
