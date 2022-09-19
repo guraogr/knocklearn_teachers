@@ -1,12 +1,15 @@
-import '../styles/globals.css'
+import '@fontsource/noto-sans-jp/400.css'
+import '@fontsource/noto-sans-jp/700.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
+import { theme } from '../theme/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return
-  ;<ChakraProvider>
-    <Component {...pageProps} />
-  </ChakraProvider>
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
 }
 
 export default MyApp
