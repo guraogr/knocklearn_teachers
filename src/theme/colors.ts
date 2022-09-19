@@ -1,4 +1,4 @@
-export const colors = {
+export const primitiveTokens = {
   brand: {
     50: '#F6FAFF',
     100: '#E1F0FF',
@@ -11,7 +11,7 @@ export const colors = {
     800: '#204264',
     900: '#102942',
   },
-  Yellow: {
+  yellow: {
     50: '#FCF9F3',
     100: '#F9F2E7',
     200: '#F3E5CF',
@@ -23,7 +23,7 @@ export const colors = {
     800: '#79623E',
     900: '#574426',
   },
-  Gray: {
+  gray: {
     50: '#F2F2F2',
     100: '#DBDBDB',
     200: '#C5C5C5',
@@ -35,7 +35,7 @@ export const colors = {
     800: '#373B3D',
     900: '#222526',
   },
-  Red: {
+  red: {
     50: '#FFEBEB',
     100: '#FFBEBE',
     200: '#FF9292',
@@ -48,3 +48,20 @@ export const colors = {
     900: '#430000',
   },
 }
+
+export const semanticTokens = {
+  primary: primitiveTokens.brand[900],
+  primaryLight: primitiveTokens.brand[50],
+  secondary: primitiveTokens.yellow[500],
+  secondaryLight: primitiveTokens.yellow[50],
+  primaryText: primitiveTokens.gray[900],
+  secondaryText: primitiveTokens.gray[600],
+  placeholder: primitiveTokens.gray[300],
+  caution: primitiveTokens.red[400],
+  cautionLight: primitiveTokens.red[50],
+  border: primitiveTokens.gray[100],
+  icon: primitiveTokens.gray[600],
+  background: 'while',
+}
+
+export const colors = { ...primitiveTokens, ...semanticTokens }
