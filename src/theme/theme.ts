@@ -7,4 +7,11 @@ export const theme = extendTheme({
     heading: `'Noto Sans JP', sans-serif`,
     body: `'Noto Sans JP', sans-serif`,
   },
+  textStyles: {
+    h1: {
+      fontSize: ['28px', '32px'],
+      fontWeight: 'bold',
+      lineHeight: '120%',
+    },
+  },
 })
