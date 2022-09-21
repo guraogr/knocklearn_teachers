@@ -7,6 +7,9 @@ export const theme = extendTheme({
     heading: `'Noto Sans JP', sans-serif`,
     body: `'Noto Sans JP', sans-serif`,
   },
+  // fontSizes: {
+  //   "4xl": "3rem",
+  // },
   textStyles: {
     h1: {
       fontSize: ['28px', '32px'],
