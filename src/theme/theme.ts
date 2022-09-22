@@ -1,5 +1,5 @@
-import { extendTheme } from '@chakra-ui/react'
-import { colors } from './colors'
+import { extendTheme } from '@chakra-ui/react';
+import { colors } from './colors';
 
 export const theme = extendTheme({
   colors,
@@ -17,4 +17,27 @@ export const theme = extendTheme({
       lineHeight: '120%',
     },
   },
-})
+  components: {
+    Heading: {
+      baseStyle: {},
+      sizes: {
+        sm: {
+          fontSize: '1.125rem',
+          fontWeight: 'normal',
+        },
+        md: {
+          fontSize: '1.375rem',
+          fontWeight: 'normal',
+        },
+        lg: {
+          fontSize: '1.625rem',
+          fontWeight: 'bold',
+        },
+        xl: {
+          fontSize: '1.875rem',
+          fontWeight: 'bold',
+        },
+      },
+    },
+  },
+});

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { Heading, Text } from '@chakra-ui/react'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import { Heading, Text } from '@chakra-ui/react';
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +13,12 @@ const Home: NextPage = () => {
       </Head>
 
       <Text color={'caution'}>afewa</Text>
-      <Heading textStyle={'h1'} as="h1">
-        Title
-      </Heading>
+      <Heading size={'sm'}>Title</Heading>
+      <Heading size={'md'}>Title</Heading>
+      <Heading size={'lg'}>Title</Heading>
+      <Heading size={'xl'}>Title</Heading>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
