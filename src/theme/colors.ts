@@ -47,7 +47,7 @@ export const primitiveTokens = {
     800: '#650101',
     900: '#430000',
   },
-}
+};
 
 export const semanticTokens = {
   primary: primitiveTokens.brand[900],
@@ -62,6 +62,6 @@ export const semanticTokens = {
   border: primitiveTokens.gray[100],
   icon: primitiveTokens.gray[600],
   background: 'while',
-}
+};
 
-export const colors = { ...primitiveTokens, ...semanticTokens }
+export const colors = { ...primitiveTokens, ...semanticTokens };
