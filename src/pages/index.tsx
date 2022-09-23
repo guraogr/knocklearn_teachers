@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       <Heading size={'md'}>Title</Heading>
       <Heading size={'lg'}>Title</Heading>
       <Heading size={'xl'}>Title</Heading>
+      <Heading size={'2xl'}>Title</Heading>
     </div>
   );
 };

@@ -7,9 +7,6 @@ export const theme = extendTheme({
     heading: `'Noto Sans JP', sans-serif`,
     body: `'Noto Sans JP', sans-serif`,
   },
-  // fontSizes: {
-  //   "4xl": "3rem",
-  // },
   textStyles: {
     h1: {
       fontSize: ['28px', '32px'],
@@ -26,16 +23,21 @@ export const theme = extendTheme({
           fontWeight: 'normal',
         },
         md: {
-          fontSize: '1.375rem',
+          fontSize: '1.25rem',
           fontWeight: 'normal',
         },
         lg: {
-          fontSize: '1.625rem',
+          fontSize: '1.5rem',
           fontWeight: 'bold',
         },
         xl: {
-          fontSize: '1.875rem',
+          fontSize: '1.625rem',
           fontWeight: 'bold',
+          lineHeight: '120%',
+        },
+        '2xl': {
+          fontSize: ['1.75rem', '2rem'],
+          lineHeight: '120%',
         },
       },
     },
