@@ -1,43 +1,32 @@
 import { extendTheme } from '@chakra-ui/react';
 import { colors } from './colors';
+import { textStyles } from './textStyles';
 
 export const theme = extendTheme({
   colors,
+  textStyles,
   fonts: {
     heading: `'Noto Sans JP', sans-serif`,
     body: `'Noto Sans JP', sans-serif`,
-  },
-  textStyles: {
-    h1: {
-      fontSize: ['28px', '32px'],
-      fontWeight: 'bold',
-      lineHeight: '120%',
-    },
   },
   components: {
     Heading: {
       baseStyle: {},
       sizes: {
-        sm: {
-          fontSize: '1.125rem',
-          fontWeight: 'normal',
+        title1: {
+          textStyle: 'title1',
         },
-        md: {
-          fontSize: '1.25rem',
-          fontWeight: 'normal',
+        title2: {
+          textStyle: 'title2',
         },
-        lg: {
-          fontSize: '1.5rem',
-          fontWeight: 'bold',
+        title3: {
+          textStyle: 'title3',
         },
-        xl: {
-          fontSize: '1.625rem',
-          fontWeight: 'bold',
-          lineHeight: '120%',
+        headline: {
+          textStyle: 'headline',
         },
-        '2xl': {
-          fontSize: ['1.75rem', '2rem'],
-          lineHeight: '120%',
+        subHeadline: {
+          textStyle: 'subHeadline',
         },
       },
     },

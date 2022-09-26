@@ -12,12 +12,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Text color={'caution'}>afewa</Text>
-      <Heading size={'sm'}>Title</Heading>
-      <Heading size={'md'}>Title</Heading>
-      <Heading size={'lg'}>Title</Heading>
-      <Heading size={'xl'}>Title</Heading>
-      <Heading size={'2xl'}>Title</Heading>
+      <Heading size={'title1'}>Title</Heading>
+      <Heading size={'title2'}>Title</Heading>
+      <Heading size={'title3'}>Title</Heading>
+      <Heading size={'headline'}>Title</Heading>
+      <Heading size={'subHeadline'}>Title</Heading>
+      <Text textStyle={'body1Light'}>Title</Text>
+      <Text textStyle={'body1Bold'}>Title</Text>
+      <Text textStyle={'caption1'}>Title</Text>
     </div>
   );
 };
