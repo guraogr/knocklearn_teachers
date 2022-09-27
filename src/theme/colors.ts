@@ -50,7 +50,7 @@ export const primitiveTokens = {
 };
 
 export const semanticTokens = {
-  primary: primitiveTokens.brand[900],
+  primary: primitiveTokens.brand[500],
   primaryLight: primitiveTokens.brand[50],
   secondary: primitiveTokens.yellow[500],
   secondaryLight: primitiveTokens.yellow[50],
@@ -64,4 +64,4 @@ export const semanticTokens = {
   background: 'while',
 };
 
-export const colors = { ...primitiveTokens, ...semanticTokens };
+export const colors = primitiveTokens;

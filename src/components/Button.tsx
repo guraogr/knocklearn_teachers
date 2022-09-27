@@ -1,6 +1,6 @@
 import { Button as ChakraButton } from '@chakra-ui/react';
 
-interface ButtonProps {
+interface Props {
   children: string;
   type: 'primary';
   size: 'lg' | 'md' | 'sm';
@@ -13,7 +13,7 @@ interface ButtonStyle {
   width: string | string[];
 }
 
-const Button = ({ children, type, size }: ButtonProps) => {
+const Button = ({ children, type, size }: Props) => {
   let buttonStyle: ButtonStyle = {
     colorScheme: 'brand',
     variant: 'solid',

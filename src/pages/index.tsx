@@ -1,8 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Heading, Text } from '@chakra-ui/react';
+import { Avatar, Heading, Text } from '@chakra-ui/react';
 import Button from '../components/Button';
+import LogoWidthText from '../Icon/LogoWithText';
+import { semanticTokens } from '../theme/colors';
+import Logo from '../Icon/Logo';
 
 const Home: NextPage = () => {
   return (
@@ -24,6 +27,9 @@ const Home: NextPage = () => {
       <Button type="primary" size="lg">
         text
       </Button>
+      <LogoWidthText fill={semanticTokens.primary} width={'155px'} height={'31px'} />
+      <Logo fill={semanticTokens.primary} width={'28px'} height={'30px'} />
+      <Avatar width={['120px', '140px']} height={['120px', '140px']} src="https://bit.ly/sage-adebayo" />
     </div>
   );
 };
