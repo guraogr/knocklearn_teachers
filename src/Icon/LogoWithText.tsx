@@ -1,10 +1,12 @@
+import { semanticTokens } from '../theme/colors';
+
 interface Props {
-  width: string;
-  height: string;
-  fill: string;
+  width?: string;
+  height?: string;
+  fill?: string;
 }
 
-const LogoWidthText = ({ width, height, fill }: Props) => {
+const LogoWidthText = ({ width = '155px', height = '31px', fill = semanticTokens.primary }: Props) => {
   return (
     <svg width={width} height={height} viewBox="0 0 155 31" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_138_8458)">
