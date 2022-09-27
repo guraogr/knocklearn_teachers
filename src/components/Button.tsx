@@ -6,7 +6,7 @@ interface ButtonProps {
   size: 'lg' | 'md' | 'sm';
 }
 
-interface buttonStyle {
+interface ButtonStyle {
   colorScheme: string;
   variant: 'solid' | 'outline' | 'ghost' | 'link';
   height: string;
@@ -14,7 +14,7 @@ interface buttonStyle {
 }
 
 const Button = ({ children, type, size }: ButtonProps) => {
-  let buttonStyle: buttonStyle = {
+  let buttonStyle: ButtonStyle = {
     colorScheme: 'brand',
     variant: 'solid',
     height: '46px',
@@ -42,7 +42,7 @@ const Button = ({ children, type, size }: ButtonProps) => {
     }
   };
 
-  const generateButtonStyle = (): buttonStyle => {
+  const generateButtonStyle = (): ButtonStyle => {
     if (type === 'primary') {
       buttonStyle = {
         colorScheme: generateButtonColor(),
