@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { Heading, Text } from '@chakra-ui/react';
+import Button from '../components/Button';
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,9 @@ const Home: NextPage = () => {
       <Text textStyle={'body1Light'}>Title</Text>
       <Text textStyle={'body1Bold'}>Title</Text>
       <Text textStyle={'caption1'}>Title</Text>
+      <Button type="primary" size="lg">
+        text
+      </Button>
     </div>
   );
 };
