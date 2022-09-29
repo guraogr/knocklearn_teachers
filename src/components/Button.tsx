@@ -18,7 +18,7 @@ const Button = ({ children, type, size, otherProperties }: Props) => {
   const generateButtonSize = () => {
     if (size === 'md') {
       return {
-        height: '40px',
+        height: '44px',
         width: ['100%', '160px'],
       };
     } else if (size === 'sm') {
@@ -57,7 +57,7 @@ const Button = ({ children, type, size, otherProperties }: Props) => {
   };
 
   return (
-    <ChakraButton {...generateButtonStyle()} size={size} borderRadius="0" {...otherProperties}>
+    <ChakraButton {...generateButtonStyle()} size={size} borderRadius="4px" {...otherProperties}>
       {children}
     </ChakraButton>
   );
