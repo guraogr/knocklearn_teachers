@@ -36,7 +36,7 @@ export const textStyles = {
   },
   caption1: {
     fontSize: '0.75rem',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     lineHeight: ['150%', '175%'],
   },
 };

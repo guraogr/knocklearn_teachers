@@ -50,17 +50,17 @@ export const primitiveTokens = {
 };
 
 export const semanticTokens = {
-  primary: primitiveTokens.brand[500],
-  primaryLight: primitiveTokens.brand[50],
-  secondary: primitiveTokens.yellow[500],
-  secondaryLight: primitiveTokens.yellow[50],
-  primaryText: primitiveTokens.gray[900],
-  secondaryText: primitiveTokens.gray[600],
-  placeholder: primitiveTokens.gray[300],
-  caution: primitiveTokens.red[400],
-  cautionLight: primitiveTokens.red[50],
-  border: primitiveTokens.gray[50],
-  icon: primitiveTokens.gray[600],
+  primary: 'brand.500',
+  primaryLight: 'brand.50',
+  secondary: 'yellow.500',
+  secondaryLight: 'yellow.50',
+  primaryText: 'gray.900',
+  secondaryText: 'gray.600',
+  placeholder: 'gray.300',
+  caution: 'red.400',
+  cautionLight: 'red.50',
+  border: 'gray.50',
+  icon: 'gray.600',
   background: 'while',
 };
 

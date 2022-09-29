@@ -14,6 +14,7 @@ export const theme = extendTheme({
     heading: `'Noto Sans JP', sans-serif`,
     body: `'Noto Sans JP', sans-serif`,
   },
+
   components: {
     Heading: {
       baseStyle: {},
