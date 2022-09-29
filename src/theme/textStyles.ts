@@ -5,7 +5,7 @@ export const textStyles = {
     lineHeight: '120%',
   },
   title2: {
-    fontSize: ['1.375rem', '1.625rem'],
+    fontSize: ['1.625rem', '1.625rem'],
     fontWeight: 'bold',
     lineHeight: '120%',
   },

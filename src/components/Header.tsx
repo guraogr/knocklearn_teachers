@@ -10,7 +10,7 @@ interface Props {
 const Header = ({ darkMode }: Props) => {
   return (
     <header>
-      <Flex py="4" px="10" justifyContent={'space-between'}>
+      <Flex py="16px" px={['24px', '40px']} justifyContent={'space-between'}>
         <LogoWidthText />
         <Button type="subtle" size="sm" otherProperties={{ href: 'https://knocklearn.com/', as: 'a' }}>
           公式サイトへ

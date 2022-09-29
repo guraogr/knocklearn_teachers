@@ -12,8 +12,8 @@ const TeacherCard = () => {
           <Avatar width={['44px', '28px']} height={['44px', '28px']} src="https://bit.ly/sage-adebayo" />
         </Flex> */}
       </Box>
-      <Box pr={4} pl={10} width="100%">
-        <Flex alignItems={'center'} mb="4px">
+      <Box pr={[0, 4]} pl={[0, 10]} mb={['24px', 0]} width="100%">
+        <Flex justifyContent={['center', 'flex-start']} alignItems={'center'} mb={['8px', '4px']}>
           <Heading size={'title2'} mr="12px">
             福本 英
           </Heading>
@@ -22,9 +22,11 @@ const TeacherCard = () => {
         <HStack
           textStyle={'body1Light'}
           spacing={'8px'}
-          divider={<StackDivider borderColor={'border'} />}
+          wrap="wrap"
+          divider={<StackDivider transform="translateY(5px)" height={'18px'} borderColor={'border'} />}
           mb={['16px', '8px']}
-          height={'18px'}
+          justify={['center', 'flex-start']}
+          color={'secondaryText'}
         >
           <Text>25歳</Text>
           <Text>男性</Text>

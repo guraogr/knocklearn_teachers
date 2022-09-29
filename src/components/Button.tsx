@@ -10,7 +10,7 @@ interface Props {
 interface ButtonStyle {
   colorScheme: string;
   variant: 'solid' | 'outline' | 'ghost' | 'link';
-  height: string;
+  height: string | string[];
   width: string | string[];
 }
 
@@ -18,7 +18,7 @@ const Button = ({ children, type, size, otherProperties }: Props) => {
   const generateButtonSize = () => {
     if (size === 'md') {
       return {
-        height: '44px',
+        height: ['50px', '44px'],
         width: ['100%', '160px'],
       };
     } else if (size === 'sm') {
