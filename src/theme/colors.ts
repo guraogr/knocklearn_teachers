@@ -55,7 +55,7 @@ export const semanticTokens = {
   secondary: 'yellow.500',
   secondaryLight: 'yellow.50',
   primaryText: 'gray.900',
-  secondaryText: 'gray.600',
+  secondaryText: 'gray.200',
   placeholder: 'gray.300',
   caution: 'red.400',
   cautionLight: 'red.50',
