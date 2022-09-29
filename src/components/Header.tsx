@@ -9,15 +9,15 @@ interface Props {
 
 const Header = ({ darkMode }: Props) => {
   return (
-    <>
+    <header>
       <Flex py="4" px="10" justifyContent={'space-between'}>
         <LogoWidthText />
         <Button type="subtle" size="sm" otherProperties={{ href: 'https://knocklearn.com/', as: 'a' }}>
           公式サイトへ
         </Button>
       </Flex>
-      <Divider borderColor={semanticTokens.border} />
-    </>
+      <Divider borderColor={'border'} />
+    </header>
   );
 };
 
