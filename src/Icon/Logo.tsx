@@ -1,10 +1,10 @@
 interface Props {
-  width: string;
-  height: string;
-  fill: string;
+  width?: string;
+  height?: string;
+  fill?: string;
 }
 
-const Logo = ({ width, height, fill }: Props) => {
+const Logo = ({ width = '28px', height = '32px', fill = 'white' }: Props) => {
   return (
     <svg width={width} height={height} viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
