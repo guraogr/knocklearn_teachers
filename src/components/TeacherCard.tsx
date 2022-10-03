@@ -1,7 +1,12 @@
 import { Text, Flex, Avatar, Box, Heading, HStack, StackDivider } from '@chakra-ui/react';
+import Link from 'next/link';
 import Button from './Button';
 
-const TeacherCard = () => {
+interface Props {
+  id: number;
+}
+
+const TeacherCard = ({ id }: Props) => {
   return (
     <Flex justifyContent={'space-between'} direction={['column', 'row']}>
       <Box maxWidth={['90%', '100px']} mx={'auto'} justifyContent="center">
@@ -38,7 +43,7 @@ const TeacherCard = () => {
           私は兵庫県姫路市で生まれ、幼少期から公文と野球をしていたのですが、小学5年生の時に自ら中学受験をすることを選び兵庫県にある白陵中学・高等学校に進学しました...
         </Text>
       </Box>
-      <Button type="primary" size="md">
+      <Button type="primary" size="md" href={`/teacher/${id}`}>
         詳細を見る
       </Button>
     </Flex>
