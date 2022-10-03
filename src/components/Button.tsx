@@ -1,10 +1,12 @@
 import { Button as ChakraButton } from '@chakra-ui/react';
+import Router from 'next/router';
 
 interface Props {
   children: string;
   type: 'primary' | 'subtle';
   size: 'lg' | 'md' | 'sm';
   otherProperties?: { [key: string]: string };
+  href?: string;
 }
 
 interface ButtonStyle {
@@ -14,7 +16,7 @@ interface ButtonStyle {
   width: string | string[];
 }
 
-const Button = ({ children, type, size, otherProperties }: Props) => {
+const Button = ({ children, type, size, otherProperties, href }: Props) => {
   const generateButtonSize = () => {
     if (size === 'md') {
       return {
@@ -56,8 +58,20 @@ const Button = ({ children, type, size, otherProperties }: Props) => {
     return buttonStyle;
   };
 
+  const onClickHandler = () => {
+    if (href) {
+      Router.push(href);
+    }
+  };
+
   return (
-    <ChakraButton {...generateButtonStyle()} size={size} borderRadius="4px" {...otherProperties}>
+    <ChakraButton
+      {...generateButtonStyle()}
+      size={size}
+      borderRadius="4px"
+      {...otherProperties}
+      onClick={onClickHandler}
+    >
       {children}
     </ChakraButton>
   );
