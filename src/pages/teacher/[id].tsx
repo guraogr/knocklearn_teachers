@@ -4,6 +4,10 @@ import styles from '../../styles/Home.module.css';
 import { Avatar, Box, Flex, Heading, HStack, Stack, StackDivider, Text, VStack } from '@chakra-ui/react';
 import Header from '../../components/Header';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+import { DoubleCircle, SingleOutlineCircle, OutlineTriangle, Close } from '../../Icon/Icon';
+import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react';
+import SubjectTable from '../../components/SubjectTable';
+import ScheduleTable from '../../components/ScheduleTable';
 
 const Home: NextPage = () => {
   return (
@@ -15,8 +19,14 @@ const Home: NextPage = () => {
       </Head>
       <Header darkMode={true} />
       <Box as="main" mt={'-64px'}>
-        <Flex alignItems={'flex-end'} maxWidth="820px" marginX={'auto'} mb={'48px'}>
-          <Box mr={'24px'}>
+        <Flex
+          direction={['column', 'row']}
+          alignItems={['column', 'flex-end']}
+          maxWidth="820px"
+          marginX={'auto'}
+          mb={'48px'}
+        >
+          <Box maxWidth={'100%'} mr={['auto', '24px']} ml={['auto', '0']} mb={['16px', 0]}>
             <Avatar
               width={['140px', '130px']}
               height={['140px', '130px']}
@@ -24,14 +34,19 @@ const Home: NextPage = () => {
               mb={'8px'}
               border={'2px solid white'}
             />
-            <Flex justifyContent={'space-between'} width="100%" px={'8px'}>
+            <HStack justifyContent={'space-between'} width="100%" px={['0', '8px']}>
               <Avatar width={['44px', '32px']} height={['44px', '32px']} src="https://bit.ly/sage-adebayo" />
               <Avatar width={['44px', '32px']} height={['44px', '32px']} src="https://bit.ly/sage-adebayo" />
               <Avatar width={['44px', '32px']} height={['44px', '32px']} src="https://bit.ly/sage-adebayo" />
-            </Flex>
+            </HStack>
           </Box>
           <Box>
-            <Flex justifyContent={['center', 'flex-start']} alignItems={'center'} mb={['8px', '12px']}>
+            <Flex
+              direction={['column', 'row']}
+              justifyContent={['center', 'flex-start']}
+              alignItems={'center'}
+              mb={['4px', '12px']}
+            >
               <Heading size={'title1'} mr="12px">
                 福本 英
               </Heading>
@@ -55,7 +70,7 @@ const Home: NextPage = () => {
         </Flex>
         <Tabs colorScheme="brand">
           <TabList borderColor={'border'} borderBottom="1px solid" color="secondaryText">
-            <Flex width={'820px'} margin="0 auto">
+            <Flex width={'100%'} maxWidth="820px" margin="0 auto">
               <Tab fontWeight={'bold'} width={['50%', '160px']}>
                 プロフィール
               </Tab>
@@ -66,7 +81,7 @@ const Home: NextPage = () => {
           </TabList>
 
           <TabPanels>
-            <TabPanel width={'820px'} margin="0 auto">
+            <TabPanel width={'100%'} maxWidth="820px" margin="0 auto">
               <Box my="56px">
                 <Heading size={'title2'} mb="24px">
                   自己紹介
@@ -85,8 +100,108 @@ const Home: NextPage = () => {
                 </Text>
               </Box>
             </TabPanel>
-            <TabPanel width={'820px'} margin="0 auto">
-              <p>two!</p>
+            <TabPanel width={'100%'} maxWidth="820px" margin="0 auto">
+              <Box my="56px">
+                <Heading size={'title2'} mb="24px">
+                  授業の紹介文
+                </Heading>
+                <Text textStyle={'body1Light'}>
+                  私が運営するオンライン家庭教師の授業では学校で習うような教科の勉強も一緒に行っていますが、1番の価値は生徒さん1人1人にあった探究学習です！
+                  探究学習を行うためにはリアルな社会のことを幅広く知っておく必要があるので、毎回の授業の冒頭に生徒さんが気になった今週のニュースについて10分間ディスカッションをする時間を設けています。
+                </Text>
+              </Box>
+              <Box my="56px">
+                <Heading size={'title2'} mb="24px">
+                  学問分野
+                </Heading>
+                <Text textStyle={'body1Light'}>理系</Text>
+              </Box>
+              <Box my="56px">
+                <Heading size={'title2'} mb="24px">
+                  教える学年と教科
+                </Heading>
+                <Flex bg="primaryLight" color={'primary'} p={'6px 16px'} wrap="wrap" mb={'12px'}>
+                  <Flex align={'center'} mr="20px">
+                    <DoubleCircle color={'primary'} boxSize={'14px'} mr={'4px'} />
+                    <Text textStyle={'caption1'}>受験対策可能</Text>
+                  </Flex>
+                  <Flex align={'center'} mr="20px">
+                    <SingleOutlineCircle color={'primary'} boxSize={'14px'} mr={'4px'} />
+                    <Text textStyle={'caption1'}>受験対策可能</Text>
+                  </Flex>
+                  <Flex align={'center'} mr="20px">
+                    <OutlineTriangle color={'secondary'} mr={'4px'} />
+                    <Text textStyle={'caption1'}>受験対策可能</Text>
+                  </Flex>
+                  <Flex align={'center'}>
+                    <Close color={'border'} mr={'4px'} />
+                    <Text textStyle={'caption1'}>受験対策可能</Text>
+                  </Flex>
+                </Flex>
+                <SubjectTable />
+              </Box>
+              <Box my="56px">
+                <Heading size={'title2'} mb="24px">
+                  授業可能日・時間
+                </Heading>
+                <ScheduleTable />
+              </Box>
+              <Box my="56px">
+                <Heading size={'title2'} mb="24px">
+                  特別対応
+                </Heading>
+                <TableContainer>
+                  <Table
+                    variant={'simple'}
+                    overflowX={'scroll'}
+                    sx={{ borderCollapse: 'collapse', border: '1px solid rgb(219,219,219)' }}
+                  >
+                    <Thead bg="primary">
+                      <Tr>
+                        <Th
+                          textAlign="center"
+                          color="white"
+                          rowSpan={2}
+                          borderColor="rgba(219,219,219,0.2)"
+                          borderBottomWidth={0}
+                          borderRightWidth={'1px'}
+                        >
+                          対応内容
+                        </Th>
+                        <Th textAlign="center" color="white" colSpan={5} borderColor="rgba(219,219,219,0.2)">
+                          対応について
+                        </Th>
+                      </Tr>
+                    </Thead>
+                    <Tbody>
+                      <Tr>
+                        <Td textAlign="center" borderColor="border" borderRightWidth={'1px'}>
+                          不登校対応
+                        </Td>
+                        <Td textAlign="center" borderColor="border" borderRightWidth={'1px'}>
+                          対応可能（指導経験あり）
+                        </Td>
+                      </Tr>
+                      <Tr>
+                        <Td textAlign="center" borderColor="border" borderRightWidth={'1px'}>
+                          振替授業
+                        </Td>
+                        <Td textAlign="center" borderColor="border" borderRightWidth={'1px'}>
+                          先生都合のみ対応
+                        </Td>
+                      </Tr>
+                      <Tr>
+                        <Td textAlign="center" borderColor="border" borderRightWidth={'1px'}>
+                          宿題の有無
+                        </Td>
+                        <Td textAlign="center" borderColor="border" borderRightWidth={'1px'}>
+                          生徒の自主性に任せる
+                        </Td>
+                      </Tr>
+                    </Tbody>
+                  </Table>
+                </TableContainer>
+              </Box>
             </TabPanel>
           </TabPanels>
         </Tabs>
