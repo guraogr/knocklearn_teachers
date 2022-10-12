@@ -1,6 +1,6 @@
 export const primitiveTokens = {
   brand: {
-    50: '#88AED5',
+    50: '#F9F9F9',
     100: '#7A9FC4',
     200: '#6082A4',
     300: '#456483',
