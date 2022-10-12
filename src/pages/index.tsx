@@ -1,11 +1,18 @@
-import type { NextPage } from 'next';
+import type { InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Avatar, Box, Heading, Stack, StackDivider, Text, VStack } from '@chakra-ui/react';
+import { Box, Heading, StackDivider, VStack } from '@chakra-ui/react';
 import Header from '../components/Header';
 import TeacherCard from '../components/TeacherCard';
+import { client } from '../libs/client';
+import { Teacher } from '../types/api';
 
-const Home: NextPage = () => {
+interface Props {
+  teachers: Teacher[];
+}
+
+const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ teachers }: Props) => {
+  console.log(teachers);
   return (
     <Box className={styles.container}>
       <Head>
@@ -19,12 +26,9 @@ const Home: NextPage = () => {
           講師一覧
         </Heading>
         <VStack spacing={['48px', '40px']} divider={<StackDivider borderColor={'border'} />}>
-          <TeacherCard id={1} />
-          <TeacherCard id={2} />
-          <TeacherCard id={3} />
-          <TeacherCard id={4} />
-          <TeacherCard id={5} />
-          <TeacherCard id={6} />
+          {teachers.map((teacher) => {
+            return <TeacherCard key={teacher.id} content={teacher} />;
+          })}
         </VStack>
       </Box>
     </Box>
@@ -32,3 +36,12 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: 'teacher' });
+  return {
+    props: {
+      teachers: data.contents,
+    },
+  };
+};

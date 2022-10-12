@@ -1,28 +1,23 @@
 import { Text, Flex, Avatar, Box, Heading, HStack, StackDivider } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Teacher } from '../types/api';
 import Button from './Button';
 
 interface Props {
-  id: number;
+  content: Teacher;
 }
 
-const TeacherCard = ({ id }: Props) => {
+const TeacherCard = ({ content }: Props) => {
   return (
     <Flex justifyContent={'space-between'} direction={['column', 'row']}>
       <Box maxWidth={['90%', '100px']} mx={'auto'} justifyContent="center">
-        <Avatar width={['140px', '116px']} height={['140px', '116px']} src="https://bit.ly/sage-adebayo" mb={'14px'} />
-        {/* <Flex justifyContent={'space-between'} width="100%">
-          <Avatar width={['44px', '28px']} height={['44px', '28px']} src="https://bit.ly/sage-adebayo" />
-          <Avatar width={['44px', '28px']} height={['44px', '28px']} src="https://bit.ly/sage-adebayo" />
-          <Avatar width={['44px', '28px']} height={['44px', '28px']} src="https://bit.ly/sage-adebayo" />
-        </Flex> */}
+        <Avatar width={['140px', '116px']} height={['140px', '116px']} src={content.photo[0].photo.url} mb={'14px'} />
       </Box>
       <Box pr={[0, 4]} pl={[0, 10]} mb={['24px', 0]} width="100%">
         <Flex justifyContent={['center', 'flex-start']} alignItems={'center'} mb={['8px', '4px']}>
           <Heading size={'title2'} mr="12px">
-            福本 英
+            {content.name}
           </Heading>
-          <Text textStyle={'caption1'}>ふくもと あきら</Text>
+          <Text textStyle={'caption1'}>{content.name_furigana}</Text>
         </Flex>
         <HStack
           textStyle={'body1Light'}
@@ -33,17 +28,14 @@ const TeacherCard = ({ id }: Props) => {
           justify={['center', 'flex-start']}
           color={'secondaryText'}
         >
-          <Text>25歳</Text>
-          <Text>男性</Text>
-          <Text>株式会社ノックラーン</Text>
-          <Text>経営者</Text>
+          <Text>{content.age}歳</Text>
+          <Text>{content.gender}</Text>
+          <Text>{content.company_name}</Text>
+          <Text>{content.job_category}</Text>
         </HStack>
-        <Text textStyle={'body1Light'}>
-          副業社会人によるオンライン家庭教師KnockLearnを運営する株式会社ノックラーン代表の福本です!
-          私は兵庫県姫路市で生まれ、幼少期から公文と野球をしていたのですが、小学5年生の時に自ら中学受験をすることを選び兵庫県にある白陵中学・高等学校に進学しました...
-        </Text>
+        <Text textStyle={'body1Light'}>{content.self_pr}</Text>
       </Box>
-      <Button type="primary" size="md" href={`/teacher/${id}`}>
+      <Button type="primary" size="md" href={`/teacher/${content.id}`}>
         詳細を見る
       </Button>
     </Flex>
