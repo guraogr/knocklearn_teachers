@@ -1,4 +1,5 @@
 import { Text, Flex, Avatar, Box, Heading, HStack, StackDivider } from '@chakra-ui/react';
+import { ommitedString } from '../libs/ommitedString';
 import { Teacher } from '../types/api';
 import Button from './Button';
 
@@ -8,7 +9,7 @@ interface Props {
 
 const TeacherCard = ({ content }: Props) => {
   return (
-    <Flex justifyContent={'space-between'} direction={['column', 'row']}>
+    <Flex justifyContent={'space-between'} direction={['column', 'row']} w="100%">
       <Box maxWidth={['90%', '100px']} mx={'auto'} justifyContent="center">
         <Avatar width={['140px', '116px']} height={['140px', '116px']} src={content.photo[0].photo.url} mb={'14px'} />
       </Box>
@@ -33,7 +34,7 @@ const TeacherCard = ({ content }: Props) => {
           <Text>{content.company_name}</Text>
           <Text>{content.job_category}</Text>
         </HStack>
-        <Text textStyle={'body1Light'}>{content.self_pr}</Text>
+        <Text textStyle={'body1Light'}>{ommitedString(content.self_pr)}</Text>
       </Box>
       <Button type="primary" size="md" href={`/teacher/${content.id}`}>
         詳細を見る
